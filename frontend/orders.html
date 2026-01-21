@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Orders | GrabitGreen</title>
+
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/component.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">Grabit<span>Green</span></div>
+    <nav class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="cart.html">Cart <span id="cart-count" class="cart-badge">0</span></a>
+    </nav>
+  </header>
+
+  <!-- Orders Section -->
+  <section style="max-width: 800px; margin: 3rem auto;">
+    <h2>My Orders</h2>
+
+    <div id="orders-list">
+      <p>You have not placed any orders yet 📦</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    © 2025 GrabitGreen • Built with Java & Love 💚
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/app.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/orders.js"></script>
+
+  <!-- Navbar auth logic -->
+  <script>
+    const navLinks = document.getElementById("nav-links");
+    const user = getLoggedInUser();
+
+    if (user) {
+      navLinks.innerHTML += `
+          <span style="margin-left:1rem; font-size:0.9rem; color:#374151;">
+            Hi, ${user.name}
+          </span>
+          <a href="#" onclick="logout()" style="margin-left:0.8rem; font-size:0.85rem;">
+            Logout
+          </a>
+        `;
+    } else {
+      navLinks.innerHTML += `
+        <a href="login.html">Login</a>
+        <a href="signup.html">Signup</a>
+      `;
+    }
+  </script>
+
+</body>
+</html>
