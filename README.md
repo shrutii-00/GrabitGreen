@@ -58,7 +58,7 @@ cd backend/grabbitgreen-backend
 ./mvnw spring-boot:run
 
 
-### Frontend
+   Frontend
 
 Open frontend/index.html in browser
 (or use Live Server)
